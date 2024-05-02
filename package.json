@@ -7,6 +7,7 @@
     "dev": "tsnd --respawn -r tsconfig-paths/register --pretty --transpile-only ./src/index.ts",
     "build": "tsc && tsc-alias && npm run copy-images",
     "copy-images": "cp -R src/mail/images dist/mail",
+    "start": "node ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
