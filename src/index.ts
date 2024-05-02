@@ -2,7 +2,7 @@ import express from "express";
 import "dotenv/config";
 import "express-async-errors";
 import "./db";
-const serverless = require("serverless-http");
+
 import authRouter from "./routers/auth";
 import audioRouter from "./routers/audio";
 import favoriteRouter from "./routers/favorite";
@@ -39,12 +39,10 @@ app.get("*", (req, res) => {
   });
 });
 
-app.use('/.netlify/src/index', app)
-
 const PORT = process.env.PORT || 8887;
 
 app.listen(PORT, () => {
   console.log(`server is listening on ${PORT}`);
 });
 
-module.exports.handler = serverless(app);
+module.exports = app
