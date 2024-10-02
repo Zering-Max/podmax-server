@@ -114,6 +114,8 @@ export const getPlaylistByProfile: RequestHandler = async (req, res) => {
     .limit(parseInt(limit))
     .sort("-createdAt");
 
+  console.log(data)
+
   const playlist = data.map(item => {
     return {
       id: item._id,
